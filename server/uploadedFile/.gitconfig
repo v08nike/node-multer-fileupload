@@ -1,0 +1,12 @@
+[user]
+	email = brzden32@gmail.com
+	name = coolerwind
+[safe]
+	directory = C:/Users/NIKE
+[core]
+	autocrlf = true
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true

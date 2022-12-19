@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <style></style>
+  <body>
+    <form method="post">
+      <input type="file" name="filetoupload" id="filetoupload" multiple />
+      <input type="button" value="File Upload" onclick="fileUpload()" />
+    </form>
+    <p id="demo">Please upload file...</p>
+
+    <form action="http://localhost:3000/uploadMultiFile" method="post" enctype="multipart/form-data">
+      <input type="file" name="files" id="files" multiple />
+      <input type="submit" value="File Upload"/>
+    </form>
+    <script script="type/javascript">
+      function fileUpload() {
+        var formData = new FormData();
+        var file = document.getElementById("filetoupload").files[0];
+        formData.append("filetoupload", file);
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("post", "http://localhost:3000/uploadFile", true);
+        xhttp.send(formData);
+        document.getElementById("demo").innerHTML = xhttp.responseText;
+      }
+    </script>
+  </body>
+</html>
